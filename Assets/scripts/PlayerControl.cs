@@ -17,25 +17,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        ninja = GetComponent<BoxCollider>();
+
     }
     void Update(){
-        if(transform.position.y < -5f){
-            SceneManager.LoadScene("Game");
-        }
+
     }
 
-    // Update is called once per frame
-    private void FixedUpdate()
-    {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
-        jump = Input.GetKeyDown(KeyCode.Space);
-
-        // rb.AddForce(xInput * speed, 0, yInput * speed);
-        rb.velocity = new Vector3(xInput * speed, rb.velocity.y, yInput * speed);
-        rb.AddForce(Vector3.down * 9.8f, ForceMode.Acceleration);
-        ninja.velocity = new Vector3(xInput * speed, rb.velocity.y, yInput * speed);
-    }
+    // Update is called once per frame 
 }
